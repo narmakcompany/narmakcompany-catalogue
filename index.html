@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کاتالوگ هوشمند نرمک | نسخه نهایی</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        :root { 
+            --main-red: #e60000; 
+            --dark-red: #b30000;
+            --soft-gray: #f8f9fa;
+            --text-main: #2d3436;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        body, html { 
+            margin: 0; padding: 0; font-family: 'Vazirmatn', sans-serif; 
+            background-color: #121212; height: 100%; overflow: hidden; 
+        }
+
+        .app-frame { 
+            width: 100%; max-width: 450px; height: 100vh; background: var(--soft-gray); 
+            margin: 0 auto; position: relative; display: flex; flex-direction: column;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .page { display: none; height: 100%; flex-direction: column; animation: slideUp 0.4s ease-out; }
+        .active { display: flex; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        #splash-page { 
+            background: radial-gradient(circle at center, var(--main-red), #800000); 
+            color: white; justify-content: center; align-items: center; text-align: center; 
+        }
+        .logo-glow { width: 180px; filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)); margin-bottom: 20px; }
+        
+        .primary-btn { 
+            background: white; color: var(--main-red); border: none; padding: 14px 40px; 
+            border-radius: 50px; font-size: 1.1rem; font-weight: 800; cursor: pointer; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: 0.3s; font-family: 'Vazirmatn';
+        }
+
+        .app-header { 
+            background: white; padding: 15px; text-align: center; 
+            border-bottom: 2px solid var(--main-red); box-shadow: var(--shadow); z-index: 10;
+        }
+
+        .content-scroll { padding: 20px; flex-grow: 1; overflow-y: auto; scroll-behavior: smooth; }
+
+        .menu-card { 
+            background: white; padding: 15px; margin-bottom: 12px; border-radius: 15px;
+            display: flex; align-items: center; justify-content: space-between;
+            text-decoration: none; color: var(--text-main); border-right: 5px solid var(--main-red);
+            box-shadow: var(--shadow); transition: 0.2s;
+        }
+        .menu-card:active { background: #fff5f5; }
+        .menu-card strong { font-size: 15px; }
+        .menu-card small { display: block; color: #888; font-size: 11px; font-weight: normal; }
+
+        .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding-bottom: 30px; }
+        .product-item { 
+            background: white; border-radius: 18px; padding: 12px; text-align: center;
+            box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03);
+        }
+        .product-item img { width: 100%; height: 130px; object-fit: contain; margin-bottom: 10px; }
+        .product-item p { margin: 0; font-size: 12px; font-weight: 700; color: #444; height: 35px; display: flex; align-items: center; justify-content: center; }
+
+        .back-nav { 
+            background: var(--main-red); color: white; border: none; padding: 12px; 
+            border-radius: 12px; font-weight: bold; width: 100%; margin-top: 10px; cursor: pointer; font-family: 'Vazirmatn';
+        }
+
+        .footer-tag { background: #2d2d2d; color: #999; padding: 8px; text-align: center; font-size: 11px; }
+    </style>
+</head>
+<body>
+
+<div class="app-frame">
+    <div id="splash-page" class="page active">
+        <img src="https://narmakco.com/wp-content/uploads/2022/06/cropped-logo-B.png" class="logo-glow" style="filter: brightness(0) invert(1);">
+        <h2 style="font-weight: 300;">گروه صنعتی نرمک</h2>
+        <button class="primary-btn" onclick="goToPage('main-menu')">ورود به کاتالوگ</button>
+    </div>
+
+    <div id="main-menu" class="page">
+        <div class="app-header"><img src="https://narmakco.com/wp-content/uploads/2022/06/cropped-logo-B.png" style="width: 100px;"></div>
+        <div class="content-scroll">
+            <h4 style="margin: 0 0 15px 0; color: #666; border-right: 3px solid var(--main-red); padding-right: 10px;">کاتالوگ‌های دیجیتال (PDF)</h4>
+            
+            <a href="https://narmakco.com/wp-content/uploads/2023/03/list.pdf" target="_blank" class="menu-card">
+                <div><strong>لیست محصولات</strong><small>مشاهده دسته‌بندی محصولات</small></div><span>⬅</span>
+            </a>
+            <a href="https://narmakco.com/wp-content/uploads/2023/02/brochure-2-lat.pdf" target="_blank" class="menu-card">
+                <div><strong>بروشور ۲ لت</strong><small>معرفی اجمالی محصولات</small></div><span>⬅</span>
+            </a>
+            <a href="https://narmakco.com/wp-content/uploads/2023/02/b1.pdf" target="_blank" class="menu-card">
+                <div><strong>بروشور کاربرد محصولات</strong><small>راهنمای استفاده صحیح</small></div><span>⬅</span>
+            </a>
+            <a href="https://narmakco.com/wp-content/uploads/2023/02/narmak-cataloge.pdf" target="_blank" class="menu-card">
+                <div><strong>کاتالوگ جامع</strong><small>جزئیات کامل و فنی</small></div><span>⬅</span>
+            </a>
+            
+            <div class="menu-card" onclick="goToPage('gallery-menu')" style="background: #fff5f5; border: 2px solid var(--main-red); margin-top:20px;">
+                <strong>گالری تصاویر محصولات</strong><span>🖼️</span>
+            </div>
+        </div>
+        <div class="footer-tag">گروه صنعتی نرمک</div>
+    </div>
+
+    <div id="gallery-menu" class="page">
+        <div class="app-header"><strong>انتخاب دسته‌بندی</strong></div>
+        <div class="content-scroll">
+            <div class="menu-card" onclick="goToPage('cat-30-sade')"><strong>روغن های ۳۰ میل ساده</strong><span>🖼️</span></div>
+            <div class="menu-card" onclick="goToPage('cat-30-pompi')"><strong>روغن های ۳۰ میل پمپی</strong><span>🖼️</span></div>
+            <div class="menu-card" onclick="goToPage('cat-60-mil')"><strong>روغن های ۶۰ میل</strong><span>🖼️</span></div>
+            <div class="menu-card" onclick="goToPage('cat-taghviyati')"><strong>محصولات تقویتی</strong><span>🖼️</span></div>
+            <div class="menu-card" onclick="goToPage('cat-cleaner')"><strong>انواع پاک کننده های ناخن</strong><span>🖼️</span></div>
+            <div class="menu-card" onclick="goToPage('cat-vaseline')"><strong>انواع وازلین</strong><span>🖼️</span></div>
+            <button class="back-nav" onclick="goToPage('main-menu')" style="background:#555">بازگشت به منوی اصلی</button>
+        </div>
+    </div>
+
+    <div id="cat-30-sade" class="page">
+        <div class="app-header"><strong>روغن های ۳۰ میل ساده</strong></div>
+        <div class="content-scroll">
+            <div class="product-grid">
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/42.png"><p>روغن گل بنفشه</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/4.png"><p>روغن خراطین</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/51.png"><p>روغن درخت چای</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/90.png"><p>روغن زنجبیل</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/9.png"><p>روغن آمله</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/8.png"><p>روغن سقز</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/10.png"><p>روغن ریحان</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/110.png"><p>روغن سیر</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/55.png"><p>روغن ماکادمیا</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/50.png"><p>روغن گردو</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/5.png"><p>روغن مورینگا</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/3.png"><p>روغن کالاندولا</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/mint-1.png"><p>روغن نعنا</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/peppermint.png"><p>روغن نعنا فلفلی</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/choob-sandal.png"><p>روغن چوب صندل</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/clary-sage-1.png"><p>روغن مریم گلی</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/safflower.png"><p>روغن گلرنگ</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/lemon.png"><p>روغن لیمو</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/peste.png"><p>روغن پسته</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/milk-thistle-1.png"><p>روغن خارمریم</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/coriander-seed.png"><p>روغن تخم گشنیز</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/rose-oil.png"><p>روغن گل سرخ</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/08/carrot.png"><p>روغن هویج</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/haste-anar.png"><p>روغن هسته انار</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/haste-angor.png"><p>روغن هسته انگور</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/javane-gandom.png"><p>روغن جوانه گندم</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/fieldhorsetail.png"><p>روغن دم اسب</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/green-tea.png"><p>روغن چای سبز</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/clove.png"><p>روغن میخک</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/appricot.png"><p>روغن زردآلو</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/eucalyptus1.png"><p>روغن اکالیپتوس</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/avocado.png"><p>روغن آووکادو</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/jojoba.png"><p>روغن جوجوبا</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/lavender.png"><p>روغن اسطوخودوس</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/cinnamon.png"><p>روغن دارچین</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/rosemary.png"><p>روغن رزماری</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/myrtus.png"><p>روغن مورد</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/fennel.png"><p>روغن رازیانه</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/chamomile.png"><p>روغن بابونه</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/argan.png"><p>روغن آرگان</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/aloevera.png"><p>روغن آلوئه ورا</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/hazelnut.png"><p>روغن فندق</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/blackseed.png"><p>روغن سیاه دانه</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2022/07/flaxseed.png"><p>روغن کتان</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2022/07/tokhme-kado.png"><p>روغن تخم کدو</p></div>
+            </div>
+            <button class="back-nav" onclick="goToPage('gallery-menu')">برگشت</button>
+        </div>
+    </div>
+
+    <div id="cat-30-pompi" class="page">
+        <div class="app-header"><strong>روغن های ۳۰ میل پمپی</strong></div>
+        <div class="content-scroll">
+            <div class="product-grid">
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/مورینگا.png"><p>روغن مورینگا پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/مورد.png"><p>روغن مورد پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/ماکادمیا.png"><p>روغن ماکادمیا پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/گل-بنفشه.png"><p>روغن بنفشه پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/کالاندولا.png"><p>روغن کالاندولا پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/سیاهدانه.png"><p>روغن سیاهدانه پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/رزماری.png"><p>روغن رزماری پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/درخت-چای.png"><p>روغن چای پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/خراطین.png"><p>روغن خراطین پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/جوجوبا.png"><p>روغن جوجوبا پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/آووکادو.png"><p>روغن آووکادو پمپی</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/آرگان.png"><p>روغن آرگان پمپی</p></div>
+            </div>
+            <button class="back-nav" onclick="goToPage('gallery-menu')">برگشت</button>
+        </div>
+    </div>
+
+    <div id="cat-60-mil" class="page">
+        <div class="app-header"><strong>روغن های ۶۰ میل</strong></div>
+        <div class="content-scroll">
+            <div class="product-grid">
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/sesame.png"><p>روغن کنجد</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/olive.png"><p>روغن زیتون</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/coconut.png"><p>روغن نارگیل</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/bitter-almond.png"><p>روغن بادام تلخ</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/castor.png"><p>روغن کرچک</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/paraffin.png"><p>روغن پارافین</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/ostrich.png"><p>روغن شترمرغ</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/2.png"><p>روغن بادام شیرین</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/222.png"><p>روغن گلیسیرین</p></div>
+            </div>
+            <button class="back-nav" onclick="goToPage('gallery-menu')">برگشت</button>
+        </div>
+    </div>
+
+    <div id="cat-cleaner" class="page">
+        <div class="app-header"><strong>انواع پاک کننده های ناخن</strong></div>
+        <div class="content-scroll">
+            <div class="product-grid">
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/pad.png"><p>پد لاک پاک کن</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/aseton-1-l.png"><p>استون ۱ لیتری</p></div>
+                <div class="product-item"><img src="http://narmakco.com/wp-content/uploads/2023/02/brochoure-6-lat.png"><p>استون ۶۰ میل</p></div>
+            </div>
+            <button class="back-nav" onclick="goToPage('gallery-menu')">برگشت</button>
+        </div>
+    </div>
+
+    <div id="cat-vaseline" class="page">
+        <div class="app-header"><strong>انواع وازلین</strong></div>
+        <div class="content-scroll">
+            <div class="product-grid">
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/sade.png"><p>وازلین ساده</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/moattar.png"><p>وازلین معطر</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/sade.png"><p>وازلین مکعبی</p></div>
+            </div>
+            <button class="back-nav" onclick="goToPage('gallery-menu')">برگشت</button>
+        </div>
+    </div>
+
+    <div id="cat-taghviyati" class="page">
+        <div class="app-header"><strong>محصولات تقویتی</strong></div>
+        <div class="content-scroll">
+            <div class="product-grid">
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/mozhe.png"><p>تقویت مژه</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2023/02/abro.png"><p>تقویت ابرو</p></div>
+                <div class="product-item"><img src="https://narmakco.com/wp-content/uploads/2025/11/taghviyat-nakhon-1.png"><p>تقویت ناخن</p></div>
+            </div>
+            <button class="back-nav" onclick="goToPage('gallery-menu')">برگشت</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function goToPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+        document.querySelectorAll('.content-scroll').forEach(cs => cs.scrollTop = 0);
+    }
+</script>
+</body>
+</html>
